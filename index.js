@@ -1,3 +1,4 @@
+
 const express = require("express");
 const app = express();
 const xmlParser = require('express-xml-bodyparser');
@@ -8,9 +9,17 @@ const bodyParser = require('body-parser');
 //middleware
 app.use(xmlParser());
 
-const port_number = 5000;
-app.listen(port_number , ()=>{
-    console.log("Server Started at port : " , port_number);
+const PORT = process.env.PORT||5000;
+app.listen(PORT , ()=>{
+    //console.log("Server Started at port : " , port_number);
+    if(PORT == 5000)
+    {
+        console.log(`${PORT} used for local host`);
+    }
+    else
+    {
+        console.log(`${PORT} used for live`);
+    }
 })
 
 
