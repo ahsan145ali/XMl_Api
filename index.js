@@ -23,7 +23,7 @@ app.listen(PORT , ()=>{
 })
 
 app.get("/",(req,res)=>{
-    res.send(<h1>XML API</h1>);
+    res.send("<h1>XML API</h1>");
 })
 app.post("/accept_xml",(req,res)=>{
 
